@@ -17,6 +17,7 @@ app.get('/', routes.index.get);
 app.get('/user', routes.user.get);
 app.get('/passbook', routes.passbook.get);
 app.post('/transaction', routes.transaction.post);
+app.delete('/transaction', routes.transaction.del);
 
 app.listen(config.port, () => {
   console.log('Express server started successfully.');

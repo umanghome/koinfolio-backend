@@ -34,6 +34,7 @@ Request
 Response `200 OK`
 ```
 {
+  "success": true,
   "name": "John Doe",
   "user_id": "xyzABC123"
 }
@@ -48,30 +49,33 @@ Response `200 OK`
 Response `200 OK`
 ```
 {
-  "BTC": [
-    {
-      "id": "ABCxyz123",
-      "qty": 0.0123,
-      "price": 98000000
-    },
-    {
-      "id": "ABCxyz124",
-      "qty": 0.0123,
-      "price": 98000000
-    },
-    {
-      "id": "ABCxyz126",
-      "qty": -0.01,
-      "price": 120000000
-    }
-  ],
-  "INR": [
-    {
-      "id": "ABCxyz125",
-      "qty": 1000000,
-      "price": 100
-    }
-  ]
+  "success": true,
+  "passbook": {
+    "BTC": [
+      {
+        "id": "ABCxyz123",
+        "qty": 0.0123,
+        "price": 98000000
+      },
+      {
+        "id": "ABCxyz124",
+        "qty": 0.0123,
+        "price": 98000000
+      },
+      {
+        "id": "ABCxyz126",
+        "qty": -0.01,
+        "price": 120000000
+      }
+    ],
+    "INR": [
+      {
+        "id": "ABCxyz125",
+        "qty": 1000000,
+        "price": 100
+      }
+    ]
+  }
 }
 ```
 
@@ -84,6 +88,7 @@ Response `200 OK`
 Request (to add)
 ```
 {
+  "success": true,
   "type": "INR",
   "qty": 10000000,
   "price": 100
@@ -93,6 +98,7 @@ Request (to add)
 Request (to update)
 ```
 {
+  "success": true,
   "id": "ABCxyz127"
   "type": "INR",
   "qty": 10000000,
@@ -103,9 +109,30 @@ Request (to update)
 Response `200 OK`
 ```
 {
+  "success": true,
   "id": "ABCxyz127"
   "type": "INR",
   "qty": 10000000,
   "price": 100
+}
+```
+
+---
+
+### Delete a transaction
+
+`DELETE /transaction`
+
+Request
+```
+{
+  "id": ABCxyz127
+}
+```
+
+Response `200 OK`
+```
+{
+  "success": true
 }
 ```

@@ -12,8 +12,3 @@ Prerequisites (install in order)
 Classes:
 * User
 * Transaction
-
-Possible tables:
-* Users
-* Transactions
-* User_Transactions_Mapping

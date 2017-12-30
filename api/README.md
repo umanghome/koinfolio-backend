@@ -88,7 +88,7 @@ Request (to update)
 }
 ```
 
-Response
+Response `200 OK`
 ```
 {
   "id": "ABCxyz127"

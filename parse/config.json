@@ -1,0 +1,7 @@
+{
+  "appId": "",
+  "masterKey": "",
+  "appName": "koinfolio",
+  "cloud": "./cloud/main",
+  "databaseURI": "mongodb://localhost:27017/parse"
+}

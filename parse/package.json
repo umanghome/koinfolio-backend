@@ -1,0 +1,10 @@
+{
+  "name": "koinfolio",
+  "description": "parse-server for koinfolio",
+  "scripts": {
+    "start": "parse-server config.json"
+  },
+  "dependencies": {
+    "parse-server": "^2.0.0"
+  }
+}

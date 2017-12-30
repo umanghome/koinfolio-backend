@@ -1,3 +1,15 @@
+## Dev Setup
+
+`npm i` first, obviously.
+
+To start dev server: `npm run start`
+
+To build prod files: `npm run build`
+
+To start prod server: `npm run serve`
+
+---
+
 ## Documentation
 
 All API calls except for `/user` require a header with the user ID for authentication.

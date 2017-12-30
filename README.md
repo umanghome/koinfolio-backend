@@ -8,3 +8,12 @@ Prerequisites (install in order)
 * NodeJS
 * MongoDB
 * Parse
+
+Classes:
+* User
+* Transaction
+
+Possible tables:
+* Users
+* Transactions
+* User_Transactions_Mapping

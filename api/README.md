@@ -7,6 +7,8 @@ USER: xyzABC123
 
 ---
 
+### Add or retrieve a user
+
 `POST /user`
 
 Request
@@ -26,6 +28,8 @@ Response `200 OK`
 ```
 
 ---
+
+### Get all transactions
 
 `GET /passbook`
 
@@ -60,6 +64,8 @@ Response `200 OK`
 ```
 
 ---
+
+### Add or update a transaction
 
 `POST /transaction`
 

@@ -1,14 +1,14 @@
 /**
  * Default values for the passbook.
  */
-const defaultPassbook = {
-  "BTC": [],
-  "ETH": [],
-  "LTC": [],
-  "XRP": [],
-  "BCH": [],
-  "INR": []
-};
+// const defaultPassbook = {
+//   'BTC': [],
+//   'ETH': [],
+//   'LTC': [],
+//   'XRP': [],
+//   'BCH': [],
+//   'INR': []
+// };
 
 /**
  * Route: /passbook
@@ -23,9 +23,9 @@ const get = (req, res) => {
   // Get values for each transaction.
   
   // Clone defaultPassbook
-  let passbook = {
-    ...defaultPassbook
-  };
+  // let passbook = {
+  //   ...defaultPassbook
+  // };
 
   // Add transactions to arrays in keys of passbook.
 

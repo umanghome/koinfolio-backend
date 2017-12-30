@@ -4,6 +4,8 @@
 
 To start dev server: `npm run start`
 
+To run `eslint`: `npm run lint` (Please do this before every merge.)
+
 To build prod files: `npm run build`
 
 To start prod server: `npm run serve`

@@ -13,5 +13,6 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'no-console': 0
-  }
+  },
+  parser: 'babel-eslint'
 };

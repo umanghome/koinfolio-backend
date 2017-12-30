@@ -5,6 +5,10 @@
  * @param {Function} next 
  */
 const user = (req, res, next) => {
+  // Check if USER header is present.
+  // Get user by the ID.
+  // Set req.user
+
   next();
 };
 

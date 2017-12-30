@@ -7,6 +7,8 @@ sh <(curl -fsSL https://raw.githubusercontent.com/parse-community/parse-server/m
 
 ### Run
 
+TODO: Add docs to start MongoDB.
+
 Note: Start MongoDB before running Parse.
 
 ```

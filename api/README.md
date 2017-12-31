@@ -142,3 +142,63 @@ Response `200 OK`
   "success": true
 }
 ```
+
+---
+
+### Add transactions in bulk
+
+`POST /transaction/bulk`
+
+Request
+```
+{
+  transactions: [{
+    "type": "BTC",
+    "qty": 60.00,
+    "price": 150.00,
+    "fees": 0
+  },
+  {
+    "type": "BTC",
+    "qty": 70.00,
+    "price": 150.00,
+    "fees": 0
+  },
+  {
+    "type": "BTC",
+    "qty": 80.00,
+    "price": 150.00,
+    "fees": 0
+  }]
+}
+```
+
+Response `200 OK`
+```
+{
+  "success": true,
+  "transactions": [
+    {
+      "id": "tIKZioHPbD",
+      "type": "BTC",
+      "qty": "60",
+      "price": "150",
+      "fees": "0"
+    },
+    {
+      "id": "3WrVlNcJyT",
+      "type": "BTC",
+      "qty": "70",
+      "price": "150",
+      "fees": "0"
+    },
+    {
+      "id": "v7kQYaRFFH",
+      "type": "BTC",
+      "qty": "80",
+      "price": "150",
+      "fees": "0"
+    }
+  ]
+}
+```

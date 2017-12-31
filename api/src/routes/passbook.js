@@ -1,14 +1,14 @@
 /**
  * Default values for the passbook.
  */
-// const defaultPassbook = {
-//   'BTC': [],
-//   'ETH': [],
-//   'LTC': [],
-//   'XRP': [],
-//   'BCH': [],
-//   'INR': []
-// };
+const defaultPassbook = {
+  'BTC': [],
+  'ETH': [],
+  'LTC': [],
+  'XRP': [],
+  'BCH': [],
+  'INR': []
+};
 
 /**
  * Route: /passbook
@@ -17,23 +17,31 @@
  * @param {Response} res 
  */
 const get = (req, res) => {
-  if (!req.user) res.send(401);
+  if (!req.user) {
+    return res.status(401).send({
+      code: Codes.error.userNotSetWithRequest
+    });
+  }
 
-  // Get all the transaction IDs belonging to the user.
-  // Get values for each transaction.
+  const passbook = {
+    ...defaultPassbook
+  };
   
-  // Clone defaultPassbook
-  // let passbook = {
-  //   ...defaultPassbook
-  // };
-
-  // Add transactions to arrays in keys of passbook.
-
-  // Send the passbook to the user.
-
-  res.send({
-    passbook: true
-  });
+  // Get all the transaction IDs belonging to the user.
+  req.user
+    .fetchTransactions()
+    .then(transactions => {
+      transactions.forEach(transaction => {
+        let details = transaction.getDetails();
+        let type = details.type;
+        delete details.type;
+        passbook[type].push(details);
+      });
+      res.status(200).send(passbook);
+    })
+    .catch(err => res.status(500).send({
+      code: err.code
+    }));
 };
 
 export default {

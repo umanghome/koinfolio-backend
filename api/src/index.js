@@ -19,11 +19,12 @@ app.use(middleware.user); // for setting req.user
  * Routes
  */
 app.get('/', routes.index.get);
-app.post('/user', routes.user.post);
-app.get('/passbook', routes.passbook.get);
-app.post('/transaction', routes.transaction.post);
-app.delete('/transaction', routes.transaction.del);
-app.post('/transaction/bulk', routes.transaction.bulk.post);
+app.get('/v1', routes.index.get);
+app.post('/v1/user', routes.user.post);
+app.get('/v1/passbook', routes.passbook.get);
+app.post('/v1/transaction', routes.transaction.post);
+app.delete('/v1/transaction', routes.transaction.del);
+app.post('/v1/transaction/bulk', routes.transaction.bulk.post);
 
 app.listen(config.port, () => {
   console.log('Express server started successfully.');

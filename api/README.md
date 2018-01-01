@@ -57,24 +57,28 @@ Response `200 OK`
       {
         "id": "ABCxyz123",
         "qty": 0.0123,
-        "price": 98000000
+        "price": 98000000,
+        "fees": 2170
       },
       {
         "id": "ABCxyz124",
         "qty": 0.0123,
-        "price": 98000000
+        "price": 98000000,
+        "fees": 2170
       },
       {
         "id": "ABCxyz126",
         "qty": -0.01,
-        "price": 120000000
+        "price": 120000000,
+        "fees": 2170
       }
     ],
     "INR": [
       {
         "id": "ABCxyz125",
         "qty": 1000000,
-        "price": 100
+        "price": 100,
+        "fees": 0
       }
     ]
   }
@@ -90,21 +94,21 @@ Response `200 OK`
 Request (to add)
 ```
 {
-  "success": true,
   "type": "INR",
   "qty": 10000000,
-  "price": 100
+  "price": 100,
+  "fees": 2170
 }
 ```
 
 Request (to update)
 ```
 {
-  "success": true,
   "id": "ABCxyz127"
   "type": "INR",
   "qty": 10000000,
-  "price": 100
+  "price": 100,
+  "fees": 2170
 }
 ```
 
@@ -136,5 +140,65 @@ Response `200 OK`
 ```
 {
   "success": true
+}
+```
+
+---
+
+### Add transactions in bulk
+
+`POST /transaction/bulk`
+
+Request
+```
+{
+  transactions: [{
+    "type": "BTC",
+    "qty": 60.00,
+    "price": 150.00,
+    "fees": 0
+  },
+  {
+    "type": "BTC",
+    "qty": 70.00,
+    "price": 150.00,
+    "fees": 0
+  },
+  {
+    "type": "BTC",
+    "qty": 80.00,
+    "price": 150.00,
+    "fees": 0
+  }]
+}
+```
+
+Response `200 OK`
+```
+{
+  "success": true,
+  "transactions": [
+    {
+      "id": "tIKZioHPbD",
+      "type": "BTC",
+      "qty": "60",
+      "price": "150",
+      "fees": "0"
+    },
+    {
+      "id": "3WrVlNcJyT",
+      "type": "BTC",
+      "qty": "70",
+      "price": "150",
+      "fees": "0"
+    },
+    {
+      "id": "v7kQYaRFFH",
+      "type": "BTC",
+      "qty": "80",
+      "price": "150",
+      "fees": "0"
+    }
+  ]
 }
 ```

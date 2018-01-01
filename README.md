@@ -8,3 +8,7 @@ Prerequisites (install in order)
 * NodeJS
 * MongoDB
 * Parse
+
+Classes:
+* User
+* Transaction
